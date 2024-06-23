@@ -1,4 +1,4 @@
-import { Avatar } from "@/components/avatar";
+import { Avatar } from "@/components/catalyst-ui-kit/avatar";
 import {
   Dropdown,
   DropdownButton,
@@ -6,13 +6,13 @@ import {
   DropdownItem,
   DropdownLabel,
   DropdownMenu,
-} from "@/components/dropdown";
+} from "@/components/catalyst-ui-kit/dropdown";
 import {
   Navbar,
   NavbarItem,
   NavbarSection,
   NavbarSpacer,
-} from "@/components/navbar";
+} from "@/components/catalyst-ui-kit/navbar";
 import {
   Sidebar,
   SidebarBody,
@@ -24,8 +24,8 @@ import {
   SidebarLabel,
   SidebarSection,
   SidebarSpacer,
-} from "@/components/sidebar";
-import { SidebarLayout } from "@/components/sidebar-layout";
+} from "@/components/catalyst-ui-kit/sidebar";
+import { SidebarLayout } from "@/components/catalyst-ui-kit/sidebar-layout";
 import {
   ArrowRightStartOnRectangleIcon,
   ChevronDownIcon,
@@ -54,7 +54,7 @@ import {
   ShieldExclamationIcon,
 } from "@heroicons/react/20/solid";
 import { Divider } from "../../catalyst-ui-kit/typescript/divider";
-import { Strong, Text } from "@/components/text";
+import { Strong, Text } from "@/components/catalyst-ui-kit/text";
 
 export default function Home() {
   return (
