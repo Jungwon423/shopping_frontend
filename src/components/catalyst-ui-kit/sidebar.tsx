@@ -127,10 +127,16 @@ export function SidebarHeading({
 export const SidebarItem = forwardRef(function SidebarItem(
   {
     current,
+    active,
     className,
     children,
     ...props
-  }: { current?: boolean; className?: string; children: React.ReactNode } & (
+  }: {
+    current?: boolean;
+    active?: boolean;
+    className?: string;
+    children: React.ReactNode;
+  } & (
     | Omit<Headless.ButtonProps, "className">
     | Omit<React.ComponentPropsWithoutRef<typeof Link>, "type" | "className">
   ),
@@ -148,13 +154,13 @@ export const SidebarItem = forwardRef(function SidebarItem(
     // Hover
     "data-[hover]:bg-zinc-950/5 data-[slot=icon]:*:data-[hover]:fill-zinc-950",
     // Active
-    "data-[active]:bg-zinc-950/5 data-[slot=icon]:*:data-[active]:fill-zinc-950",
+    "data-[active]:bg-blue-50 data-[active]:text-blue-600 data-[slot=icon]:*:data-[active]:fill-blue-600",
     // Current
     "data-[slot=icon]:*:data-[current]:fill-zinc-950",
     // Dark mode
     "dark:text-white dark:data-[slot=icon]:*:fill-zinc-400",
     "dark:data-[hover]:bg-white/5 dark:data-[slot=icon]:*:data-[hover]:fill-white",
-    "dark:data-[active]:bg-white/5 dark:data-[slot=icon]:*:data-[active]:fill-white",
+    "dark:data-[active]:bg-blue-950 dark:data-[active]:text-blue-400 dark:data-[slot=icon]:*:data-[active]:fill-blue-400",
     "dark:data-[slot=icon]:*:data-[current]:fill-white"
   );
 
@@ -172,6 +178,7 @@ export const SidebarItem = forwardRef(function SidebarItem(
             className={classes}
             {...props}
             data-current={current ? "true" : undefined}
+            data-active={active ? "true" : undefined}
           >
             <TouchTarget>{children}</TouchTarget>
           </Link>
@@ -181,6 +188,7 @@ export const SidebarItem = forwardRef(function SidebarItem(
           {...props}
           className={clsx("cursor-default", classes)}
           data-current={current ? "true" : undefined}
+          data-active={active ? "true" : undefined}
           ref={ref}
         >
           <TouchTarget>{children}</TouchTarget>

@@ -53,7 +53,6 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
   ShieldExclamationIcon,
 } from "@heroicons/react/20/solid";
-import { Divider } from "../../catalyst-ui-kit/typescript/divider";
 import { Strong, Text } from "@/components/catalyst-ui-kit/text";
 
 export default function Home() {
