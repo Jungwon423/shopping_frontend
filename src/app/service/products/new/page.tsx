@@ -8,10 +8,11 @@ export default function NewProducts() {
     <div className="">
       <ServiceTitle
         title="신규 상품 등록"
-        description="신규 상품을 등록할 수 있는 페이지입니다. 원모 AI가 작성한 세부사항을 확인하고 마켓에 업로드해보세요."
+        description="신규 상품을 등록할 수 있는 페이지입니다. 원모 AI가 작성한 세부사항을 확인하고 마켓에 업로드해보세요!"
       />
       <div className="my-4"></div>
       <DefaultUploadSetting></DefaultUploadSetting>
+      <div className="my-4"></div>
       <CollectedProductList></CollectedProductList>
     </div>
   );

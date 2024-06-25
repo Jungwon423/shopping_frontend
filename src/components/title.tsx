@@ -5,9 +5,9 @@ interface ServiceTitleProps {
 
 export function ServiceTitle({ title, description }: ServiceTitleProps) {
   return (
-    <div className="bg-white">
-      <h1 className="text-2xl font-bold">{title}</h1>
-      <p className="text-lg">{description}</p>
+    <div className="bg-white p-4 rounded-md shadow-md">
+      <h1 className="text-xl font-bold mb-3">{title}</h1>
+      <p className="text-sm">{description}</p>
     </div>
   );
 }
