@@ -57,28 +57,20 @@ const ImageInfo: React.FC<ImageInfoProps> = ({ product, onUpdate }) => {
           </label>
         </div>
       </div>
-      <p className="text-sm text-gray-500 mb-4">
+      <p className="text-sm text-gray-500">
         * 상품 업로드 시 이미지는 마켓별 권장 크기로 자동 리사이징 돼요.
         (1000×1000)
       </p>
-      <p className="text-sm text-gray-500 mb-4">
+      <p className="text-sm text-gray-500">
         * 이미지는 스마트스토어, 쿠팡은 최대 10개, 11번가 최대 5개, ESM 2.0 최대
         4개, 위메프 최대 3개까지만 등록돼요.
       </p>
-      <p className="text-sm text-gray-500 mb-4">
+      <p className="text-sm text-gray-500">
         (예를 들어, ESM 2.0은 원본부터 4번째 이미지까지만 업로드돼요)
       </p>
-      <p className="text-sm text-gray-500 mb-4">
+      <p className="text-sm text-gray-500">
         * 동영상은 최대 20MB 이내로 1개까지만 등록돼요.
       </p>
-      <div className="flex justify-end space-x-4">
-        <button className="px-4 py-2 bg-blue-500 text-white rounded-md">
-          이미지 편집
-        </button>
-        <button className="px-4 py-2 bg-green-500 text-white rounded-md">
-          AI 변경
-        </button>
-      </div>
     </div>
   );
 };

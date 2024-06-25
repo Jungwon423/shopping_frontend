@@ -10,6 +10,7 @@ import PriceInfo from "@/components/service/price_info";
 import ProductAttributes from "@/components/service/product_attributes";
 import { Product } from "@/types/product";
 import UploadSettings from "@/components/service/upload_settings";
+import DetailPageViewer from "@/components/service/detail_page_viewer";
 
 // Product 타입을 확장합니다
 interface ExtendedProduct extends Product {
@@ -35,12 +36,17 @@ function getProduct(id: string): ExtendedProduct {
       "이발기/브러시",
       "브러시/빗",
     ],
+    images: [
+      "http://shop1.phinf.naver.net/20240622_60/1718991448848GXnKr_JPEG/2459758662966546_770488614.jpg",
+      "http://shop1.phinf.naver.net/20240622_60/1718991448848GXnKr_JPEG/2459758662966546_770488614.jpg",
+    ],
     smartstoreCategory: ["생활/건강", "반려동물", "미용/목욕", "브러시/빗"],
     tags: [],
     minorPurchase: "",
     brand: "",
     manufacturer: "",
     model: "",
+    detailPageHtml: "",
   };
 }
 
@@ -75,15 +81,19 @@ export default function Page({ params }: { params: { id: string } }) {
         return (
           <UploadSettings product={product} onUpdate={handleProductUpdate} />
         );
+      case "상세페이지":
+        return (
+          <DetailPageViewer product={product} onUpdate={handleProductUpdate} />
+        );
       default:
         return <div>컨텐츠 준비 중</div>;
     }
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="min-h-screen">
       <BackHeader productCode={product.id} />
-      <div className="container mx-auto px-4 py-8">
+      <div className="pl-4 py-8 mx-auto max-w-[2000px]">
         <ProductTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         {renderTabContent()}
       </div>

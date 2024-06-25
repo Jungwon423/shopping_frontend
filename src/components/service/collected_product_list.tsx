@@ -1,7 +1,14 @@
 import { ArrowPathIcon } from "@heroicons/react/20/solid"; // 아이콘을 사용하려면 적절한 아이콘 라이브러리를 임포트해야 합니다.
 import { CollectedProduct } from "./collected_product";
+import { ProductSummary } from "@/types/product_summary";
 
-export function CollectedProductList() {
+interface CollectedProductListProps {
+  productSummaries: ProductSummary[];
+}
+
+export const CollectedProductList: React.FC<CollectedProductListProps> = ({
+  productSummaries,
+}) => {
   return (
     <div className="bg-white p-4 rounded-md shadow-md">
       <div className="p-4 flex items-center space-x-4">
@@ -10,34 +17,24 @@ export function CollectedProductList() {
           <ArrowPathIcon className="h-5 w-5" />
           <span className="text-sm">새로 고침</span>
         </button>
-        {/* 다른 상품들도 같은 방식으로 추가할 수 있습니다 */}
       </div>
 
-      <CollectedProduct
-        imageUrl="/path/to/image.jpg"
-        productName="한국 그룹 아이브(G)I-DLE 블랙핑크의 레이저 카드 50개는 앨범 HD 로모 카드와 동일하다"
-        price="1,000~5,900원"
-        shippingFee="0원 (반품 0, 교환 0)"
-        overseasShippingFee="0원"
-        costPrice="762~4,501원 (¥3.98~23.5)"
-        exchangeRate="¥1 = 191.55208원"
-        productId="6675a04348c5da65f0835a9e"
-        site="Taobao.com"
-        date="2024/06/22"
-      />
-      <div className="mb-4"></div>
-      <CollectedProduct
-        imageUrl="/path/to/image.jpg"
-        productName="한국 그룹 아이브(G)I-DLE 블랙핑크의 레이저 카드 50개는 앨범 HD 로모 카드와 동일하다"
-        price="1,000~5,900원"
-        shippingFee="0원 (반품 0, 교환 0)"
-        overseasShippingFee="0원"
-        costPrice="762~4,501원 (¥3.98~23.5)"
-        exchangeRate="¥1 = 191.55208원"
-        productId="6675a04348c5da65f0835a9e"
-        site="Taobao.com"
-        date="2024/06/22"
-      />
+      {productSummaries.map((productSummary) => (
+        <div key={productSummary.productId} className="mb-4">
+          <CollectedProduct
+            imageUrl={productSummary.imageUrl}
+            productName={productSummary.productName}
+            price={productSummary.price}
+            shippingFee={productSummary.shippingFee}
+            overseasShippingFee={productSummary.overseasShippingFee}
+            costPrice={productSummary.costPrice}
+            exchangeRate={productSummary.exchangeRate}
+            productId={productSummary.productId}
+            site={productSummary.site}
+            date={productSummary.date}
+          />
+        </div>
+      ))}
     </div>
   );
-}
+};

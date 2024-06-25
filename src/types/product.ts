@@ -11,6 +11,8 @@ export interface Product {
   images?: string[];
   options?: Option[];
 
+  detailPageHtml?: string;
+
   // 새로 추가된 필드
   minorPurchase?: string;
   brand?: string;
