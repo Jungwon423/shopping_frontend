@@ -70,7 +70,13 @@ export default function Page({ params }: { params: { id: string } }) {
       case "이미지":
         return <ImageInfo product={product} onUpdate={handleProductUpdate} />;
       case "옵션":
-        return <OptionInfo product={product} onUpdate={handleProductUpdate} />;
+        return (
+          <div>
+            <OptionInfo product={product} onUpdate={handleProductUpdate} />
+            <div className="mb-10"></div>
+            <OptionInfo product={product} onUpdate={handleProductUpdate} />
+          </div>
+        );
       case "판매가":
         return <PriceInfo product={product} onUpdate={handleProductUpdate} />;
       case "상품 속성":

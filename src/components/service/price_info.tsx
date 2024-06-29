@@ -11,6 +11,7 @@ const PriceInfo: React.FC<PriceInfoProps> = (props) => {
   return (
     <div>
       <PriceInfoSetting {...props} />
+      <div className="mb-10"></div>
       <PriceOptions />
     </div>
   );

@@ -116,42 +116,6 @@ const PriceOptions: React.FC = () => {
 
   return (
     <div className="bg-white shadow-md rounded-lg p-6">
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center">
-          <Switch
-            checked={isEnabled}
-            onChange={setIsEnabled}
-            className={`${
-              isEnabled ? "bg-blue-600" : "bg-gray-200"
-            } relative inline-flex h-6 w-11 items-center rounded-full`}
-          >
-            <span className="sr-only">전체 보기</span>
-            <span
-              className={`${
-                isEnabled ? "translate-x-6" : "translate-x-1"
-              } inline-block h-4 w-4 transform rounded-full bg-white transition`}
-            />
-          </Switch>
-          <span className="ml-2 text-sm text-gray-700">전체 보기</span>
-        </div>
-        <div className="space-x-2">
-          <button className="px-3 py-1 bg-blue-100 text-blue-600 rounded">
-            배송지 반영 설정
-          </button>
-          <button className="px-3 py-1 bg-blue-100 text-blue-600 rounded">
-            관세 설정
-          </button>
-          <button className="px-3 py-1 bg-blue-100 text-blue-600 rounded">
-            스마트스토어 옵션가 필터 적용
-          </button>
-          <button className="px-3 py-1 bg-blue-100 text-blue-600 rounded">
-            판매가 일괄 변경
-          </button>
-          <button className="px-3 py-1 bg-blue-100 text-blue-600 rounded">
-            재고 일괄 변경
-          </button>
-        </div>
-      </div>
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-50">
           <tr>

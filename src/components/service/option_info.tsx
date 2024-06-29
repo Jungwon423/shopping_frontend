@@ -55,17 +55,11 @@ const OptionInfo: React.FC<OptionInfoProps> = ({ product, onUpdate }) => {
     },
   ]);
 
-  const [selectedCount, setSelectedCount] = useState(options.length);
-
   const handleOptionToggle = (id: number) => {
     setOptions((prevOptions) =>
       prevOptions.map((option) =>
         option.id === id ? { ...option, selected: !option.selected } : option
       )
-    );
-    setSelectedCount(
-      (prevCount) =>
-        prevCount + (options.find((o) => o.id === id)?.selected ? -1 : 1)
     );
   };
 
@@ -82,38 +76,6 @@ const OptionInfo: React.FC<OptionInfoProps> = ({ product, onUpdate }) => {
           2/10
         </span>
       </div>
-      <div className="mb-4 flex items-center">
-        <input
-          type="checkbox"
-          checked={selectedCount === options.length}
-          onChange={() => {}}
-          className="mr-2"
-        />
-        <span>{selectedCount} 개 선택됨</span>
-        <div className="ml-auto space-x-2">
-          <button className="px-3 py-1 bg-blue-100 text-blue-600 rounded">
-            이미지 편집
-          </button>
-          <button className="px-3 py-1 bg-blue-100 text-blue-600 rounded">
-            AI 변경
-          </button>
-          <button className="px-3 py-1 bg-gray-100 text-gray-600 rounded">
-            빈칸
-          </button>
-          <button className="px-3 py-1 bg-gray-100 text-gray-600 rounded">
-            특문
-          </button>
-          <button className="px-3 py-1 bg-gray-100 text-gray-600 rounded">
-            25글자
-          </button>
-          <button className="px-3 py-1 bg-gray-100 text-gray-600 rounded">
-            순번 추가
-          </button>
-          <button className="px-3 py-1 bg-gray-100 text-gray-600 rounded">
-            A-Z
-          </button>
-        </div>
-      </div>
       <Divider className="mb-10"></Divider>
       <div className="space-y-2">
         {options.map((option) => (
@@ -121,12 +83,6 @@ const OptionInfo: React.FC<OptionInfoProps> = ({ product, onUpdate }) => {
             key={option.id}
             className="flex items-center rounded-md p-2 mb-2"
           >
-            <input
-              type="checkbox"
-              checked={option.selected !== false}
-              onChange={() => handleOptionToggle(option.id)}
-              className="mr-2"
-            />
             <div className="relative w-10 h-10 mr-2">
               <Image
                 src={option.image}
